@@ -1,0 +1,19 @@
+.modal-btn {
+  display: inline-block;
+  width: 200px;
+  padding: 10px 30px;
+  text-align: center;
+
+  @include font(700, 16px, 30px, 0.06em);
+  font-family: $primary-font;
+  color: $primary-white-color;
+  background-color: $accent-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background-color $transition-duration cubic-bezier($cubic-bezier);
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
+}

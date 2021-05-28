@@ -1,0 +1,24 @@
+.logo {
+  @include font(700, 24px, 28px);
+  font-family: $secondary-font;
+  color: $accent-color;
+  @media screen and (min-width: 1200px) {
+    @include font(700, 26px, 31px);
+  }
+
+  &__right-part {
+    color: #000000;
+
+    &--reverse {
+      color: $primary-white-color;
+    }
+  }
+  .logo-menu-wrapper & {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .footer & {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,77 @@
+.examples {
+  display: flex;
+  flex-direction: column;
+  margin: -15px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.examples__list-item {
+  margin: 15px;
+  transition: box-shadow $transition-duration cubic-bezier($cubic-bezier);
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 354px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 370px;
+  }
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+.sample-card {
+  display: inline-block;
+  &__img-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 77px 24px;
+    overflow: auto;
+
+    @include font($fs: 18px, $lh: 28px);
+    color: #ffffff;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(101%);
+    transition: transform 250ms linear;
+    .examples__list-item:hover &,
+    .examples__list-item:focus & {
+      transform: translateY(0%);
+    }
+    @media screen and (min-width: 768px) {
+      padding: 49px 24px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 63px 24px;
+    }
+  }
+  &__description-wrapper {
+    width: 100%;
+    padding: 20px 23px;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+  }
+  &__name {
+    margin-bottom: 4px;
+    @include font(700, 18px, 36px, 0.06em);
+    color: $secondary-text-color;
+  }
+  &__type {
+    @include font($fs: 16px, $lh: 30px);
+    color: $primary-text-color;
+  }
+}
